@@ -1,0 +1,61 @@
+body {
+  margin: 50px 50px 50px 50px;
+  /*margins go top, right, botton, left */
+}
+
+/* Hello World!*/
+h1 {
+    font-family: Beyond The Mountains;
+    font-size: 100px;
+    color:  #2eb8b8;
+    text-align: center;
+}
+
+/*About Girls Who Code, From a Girl Who Codes*/
+h2 {
+    color:  #2eb8b8;
+    text-align: center; 
+    font-family: Roboto;
+}
+
+/*My Portfolio*/
+h3 {
+    font-family: Beyond The Mountains;
+    color: #33cccc;
+    font-size: 30px;
+}
+
+/*About Me
+About Girls Who Code SIP*/
+h4 {
+    font-family: Beyond The Mountains;
+    color:  #33cccc;
+    font-size: 25px;
+    
+}
+
+/*Below is a list of projects...*/
+h5 {
+    font-size: 15px;
+    font-family: Roboto;
+  
+}
+
+/*Above I have screenshots...*/
+h6 {
+    font-size: 13px;
+    font-family: Roboto;
+   
+}
+
+ul {
+    text-indent: -30px;
+}
+
+p {
+    font-family: Roboto;
+}
+
+a {
+    font-family: Roboto
+}

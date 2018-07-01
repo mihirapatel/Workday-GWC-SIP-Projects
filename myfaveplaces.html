@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  <title>San Francisco Google Maps</title>
+
+    <style>
+      #map {
+        width: 100%;
+        height: 400px;
+        background-color: grey;
+      }
+
+      h2 {
+        font-family: Roboto;
+        font-size: 50px;
+        text-align: center;
+        color: #006699;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+  <h2>Favorite Places In San Francisco</h2> 
+  <center><img src="goldengate.gif" alt="Golden Gate GIF" style="width:200px; height:140px"></center>
+
+    <div id="map"></div>
+
+    <script>
+        function initMap() {
+
+           // all of the coordinates for all of the places in SF stored as variables
+          var pier39LL = new google.maps.LatLng(37.809,-122.410);
+          var goldenGateLL = new google.maps.LatLng(37.820, -122.478);
+          var chinatownLL = new google.maps.LatLng(37.794,-122.408);
+          var gSqaureLL = new google.maps.LatLng(37.806,-122.423);
+          var calAcadLL = new google.maps.LatLng(37.770,-122.466);
+          var philzLL = new google.maps.LatLng(37.760,-122.435);
+          var twitterLL = {lat:37.777,lng:-122.416};
+
+          var mapOptions = {
+            zoom: 12,
+            center: pier39LL
+          }
+
+          var mapDiv = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+//Pier 39
+          var pier39String = "<h3>Pier 39</h3>" + "<div>This is Pier 39.</div>"
+          var pier39InfoWindow = new google.maps.InfoWindow({
+              content: pier39String
+          });
+          var pier39Marker = new google.maps.Marker({
+              position: pier39LL,
+              map: map,
+              title: 'Pier 39'
+          });
+          pier39Marker.addListener('click', function() {
+              pier39InfoWindow.open(map, pier39Marker);
+          });
+
+//Golden Gate
+          var goldenGateString = "<h3>Golden Gate Bridge </h3>" + "<div>This is the Golden Gate Bridge.</div>"
+          var goldenGateInfoWindow = new google.maps.InfoWindow({
+              content: goldenGateString
+          });
+          var goldenGateMarker = new google.maps.Marker({
+              position: goldenGateLL,
+              map: map,
+              title: 'Golden Gate'
+          });
+          goldenGateMarker.addListener('click', function() {
+              goldenGateInfoWindow.open(map, goldenGateMarker);
+          });
+
+//China Town
+          var chinatownString = "<h3>China Town</h3>" + "<div>This is China Town.</div>"
+          var chinatownInfoWindow = new google.maps.InfoWindow({
+              content: chinatownString
+          });
+          var chinatownMarker = new google.maps.Marker({
+              position: chinatownLL,
+              map: map,
+              title: 'China Town'
+          });
+          chinatownMarker.addListener('click', function() {
+              chinatownInfoWindow.open(map, chinatownMarker);
+          });
+
+//Ghirardelli
+          var ghirardelliString = "<h3>Ghirardelli Sqaure</h3>" + "<div>This is Ghirardelli Sqaure.</div>"
+          var ghirardelliInfoWindow = new google.maps.InfoWindow({
+              content: ghirardelliString
+          });
+          var ghirardelliMarker = new google.maps.Marker({
+              position: gSqaureLL,
+              map: map,
+              title: 'Ghirardelli Sqaure'
+          });
+          ghirardelliMarker.addListener('click', function() {
+              ghirardelliInfoWindow.open(map, ghirardelliMarker);
+          });
+
+//California Academy of Sciences
+          var calAcadString = "<h3>California Academy of Sciences</h3>" + "<div>This is the California Academy of Sciences.</div>"
+          var calAcadInfoWindow = new google.maps.InfoWindow({
+              content: calAcadString
+          });
+          var calAcadMarker = new google.maps.Marker({
+              position: calAcadLL,
+              map: map,
+              title: 'California Academy of Sciences'
+          });
+          calAcadMarker.addListener('click', function() {
+              calAcadInfoWindow.open(map, calAcadMarker);
+          });
+
+//Philz
+          var philzString = "<h3>Philz Coffee</h3>" + "<div>This is Philz Coffee.</div>"
+          var philzInfoWindow = new google.maps.InfoWindow({
+              content: philzString
+          });
+          var philzMarker = new google.maps.Marker({
+              position: philzLL,
+              map: map,
+              title: 'Philz Coffee'
+          });
+          philzMarker.addListener('click', function() {
+              philzInfoWindow.open(map, philzMarker);
+          });
+
+//Twitter
+        
+          var twitterString = "<h3>Twitter</h3>" + "<div>This is the SF Twitter office.</div>" 
+          var twitterInfowindow = new google.maps.InfoWindow({
+              content: twitterString
+          });
+          var twitterMarker = new google.maps.Marker({
+              position: twitterLL,
+              map: map,
+              title: 'Twitter'
+          });
+          twitterMarker.addListener('click', function() {
+              twitterInfowindow.open(map, twitterMarker);
+          });
+          
+
+//calling all of the marker functions
+          pier39Marker.setMap(mapDiv);
+          goldenGateMarker.setMap(mapDiv);
+          chinatownMarker.setMap(mapDiv);
+          ghirardelliMarker.setMap(mapDiv);
+          calAcadMarker.setMap(mapDiv);
+          philzMarker.setMap(mapDiv);
+          twitterMarker.setMap(mapDiv);
+
+        }
+        
+    </script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDS9YZhvx-ZWWtw4GzkJUPf6mchO2QbjkI&callback=initMap">
+    </script>
+
+  </body>
+
+</html>

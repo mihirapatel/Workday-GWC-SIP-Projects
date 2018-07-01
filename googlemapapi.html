@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  <title>Fremont Google Maps</title>
+
+    <style>
+      #map {
+        width: 100%;
+        height: 400px;
+        background-color: grey;
+      }
+
+      h2 {
+        font-family: Roboto;
+        font-size: 75px;
+        text-align: center;
+        color: #006699;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+  <h2>My Google Maps Demo</h2>
+    <div id="map"></div>
+
+    <script>
+        function initMap() {
+          var myLatLng = new google.maps.LatLng(37.54729940679161,-121.98783159255981);
+          var mapOptions = {
+            zoom: 8,
+            center: myLatLng
+          }
+
+          var mapDiv = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+          var marker = new google.maps.Marker ({
+              position: myLatLng,
+              title: "Hello world!"
+          });
+
+          marker.setMap(mapDiv);
+        }
+        
+    </script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDS9YZhvx-ZWWtw4GzkJUPf6mchO2QbjkI&callback=initMap">
+    </script>
+
+  </body>
+
+</html>
